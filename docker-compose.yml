@@ -1,0 +1,19 @@
+version: "3"
+services:
+  client:
+    image: client
+    stdin_open: true
+    ports:
+      - "3000:3000"
+  login-app:
+    image: login-app
+    stdin_open: true
+    ports:
+      - "5000:5000"
+    depends_on:
+      - mongo
+  mongo:
+    image: mongo:5.0.3
+    ports:
+      - "27017:27017"
+
