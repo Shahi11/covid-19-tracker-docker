@@ -13,3 +13,38 @@ code {
     monospace;
 }
 
+.taglist {
+
+  border: 1px solid #666666;
+  
+  margin-top:80px; margin-bottom:50px;
+  
+  }
+  
+  .taglist tbody tr td {
+  
+  font-family: "lucida grande", verdana, sans-serif;
+  
+  font-size: 8pt;
+  
+  padding: 3px 8px;
+  
+  border-left: 1px solid #D9D9D9;
+  
+  }
+  
+  .taglist tbody tr.selected td {
+  
+  background-color: #3d80df;
+  
+  color: #ffffff;
+  
+  font-weight: bold;
+  
+  border-left: 10px solid #346DBE;
+  
+  border-bottom: 10px solid #7DAAEA;
+  
+  }
+  
+

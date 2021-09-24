@@ -11,17 +11,16 @@ const options = {
 const routes = require('./routes/routes.js')
 const port = process.env.PORT || 80
 const app = express()
+app.use(cors({}));
 const http = require('http').Server(app)
 
 app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({ extended: true }))
+app.use(bodyParser.urlencoded({ extended: false }))
 app.use('/lsds', routes)
 app.use((req, res) => {
   res.status(404)
 })
-app.use(cors({
-  origin: 'http://localhost:3001'
-}))
+
 
 MongoClient.connect(url, options, (err, database) => {
   console.log("DATABASE =========================================");

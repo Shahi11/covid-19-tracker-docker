@@ -10,9 +10,9 @@ router.get('/covidTally', (req, res, next) => {
         res.status(400).send({'error': err})
       }
       if (result === undefined || result.length === 0) {
-        res.status(400).send({'error':'No documents in database'})
+        return res.status(400).send({'error':'No documents in database'})
       } else {
-        res.status(200).send(result)
+        return res.status(200).send(result);
       }
     })
   } catch (error) {
