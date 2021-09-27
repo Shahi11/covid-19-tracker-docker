@@ -3,7 +3,7 @@ const bodyParser = require('body-parser')
 const MongoClient = require('mongodb').MongoClient
 const cors =  require("cors");
 
-const url = `mongodb://localhost:27017`
+const url = `mongodb://mongo:27017`
 const options = {
   useNewUrlParser: true,
   useUnifiedTopology: true
@@ -23,8 +23,6 @@ app.use((req, res) => {
 
 
 MongoClient.connect(url, options, (err, database) => {
-  console.log("DATABASE =========================================");
-  console.log(database);
   if (err) {
     console.log(`FATAL MONGODB CONNECTION ERROR: ${err}:${err.stack}`)
     process.exit(1)

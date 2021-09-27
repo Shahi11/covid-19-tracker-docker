@@ -59,7 +59,10 @@ const submitForm =  () =>  {
       recovered: formRef.current.recovered.value,
       lastupdate: d
     })
-  }).then(res => res.json()).then(dat => setData(dat))
+  }).then(res => res.json()).then(dat => {
+    setData(dat)
+    setShowModal(false)
+  })
   .catch(err => console.log("My error, ", err));
 }
 
@@ -89,7 +92,7 @@ return (
     <a href="#about">About</a>
     
   </div>
-  <button id="myBtn" onClick={() => setShowModal(true)}>ADD/UPDATE DATA</button>
+  <button id="myBtn" onClick={() => setShowModal(true)}>ADD / UPDATE DATA</button>
 
 
 <div id="myModal" class="modal" ref={modalRef} style={{display: `${showModal? "block": "none"}`}}>
@@ -131,7 +134,9 @@ return (
 		<small></small>
 	</div>
  <div className="btn-wrapperr">
-  <button name="formSubmit" type="button" onClick={submitForm}>ADD / UPDATE </button>
+  <button name="formSubmit" type="button" onClick={() => {
+    submitForm();
+    }}>ADD / UPDATE </button>
 </div>
 </form>
   </div>
