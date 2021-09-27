@@ -3,7 +3,7 @@ const bodyParser = require('body-parser')
 const MongoClient = require('mongodb').MongoClient
 const cors =  require("cors");
 
-const url = `mongodb://mongo:27017`
+const url = `mongodb://localhost:27017`
 const options = {
   useNewUrlParser: true,
   useUnifiedTopology: true
